@@ -16,6 +16,31 @@
         <script src="scripts/MarkovSimulator.js"></script>
 
         <!-- Main Bootstrap Navbar -->
+        <nav id="sorting_nav" class="navbar navbar-expand-lg navbar-dark"">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                    <li class="nav-item"> <a id="bubble_btn" onclick="select_bubblesort()" class="nav-link active" href="#"> MARKOV ALGORITHM </a> </li>
+                    <li class="nav-item"> <a id="insert_btn" onclick="select_insertionsort()" class="nav-link" href="#"> REGISTER MACHINE </a> </li>
+                </ul>
+                <ul class="navbar-nav my-2 my-md-0">
+                    <li class="nav-item dropleft">            
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-translate="language" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Language </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item active" id="drop_english" onclick="english_click()" href="#"> English </a>
+                            <a class="dropdown-item" id="drop_german" onclick="german_click()" href="#"> Deutsch </a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-md-0"></form>
+                    <button id="style_btn" onclick="style_btn_click()" class="btn btn-outline-light" data-translate="theme" type="submit"> Theme </button>
+                </form>
+            </div>
+        </nav> 
+        
     </head>
 
     <body>
@@ -23,18 +48,22 @@
         <main>
 
             <div class="container-fluid">
-                
-                <!-- bootstrap grid layout for settings and visualisation -->
+      
+                <!-- markov algorithm calculation -->
                 <div class="row">
+                    <div class="col-2 box">
+                        <span id="add_btn" class="table_add"><button type="submit" class="btn btn-primary btn_override form-control form_distance">Add row</button></span>
+                        <button id="run_btn" onclick="run_markov()" type="button" class="btn btn-primary btn_override form-control form_distance">Run machine</button>
+                    </div>
 
-                    <!-- markov algorithm table -->
-                    <div id=table_container class="col-md-6">
-                        
-                        <span id="a_btn" class="table_add"><button type="button" class="btn btn-danger btn-rounded">Add</button></span>
+                    <div class="col box">
 
-                        <button id="run_btn" onclick="run_markov()" type="button" class="btn btn-danger btn-rounded">Laufen</button>
+                    </div>
+                </div>
 
-
+                <!-- markov algorithm table -->
+                <div class="row">
+                    <div id=table_container class="col box">
                         <table id="markov_table" class="table table-bordered text-center">
                             <thead>
                                 <tr>
@@ -73,7 +102,6 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
         
         </main>
